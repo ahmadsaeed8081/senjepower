@@ -79,36 +79,48 @@ const Main = (props) => {
 
 // })
 
-
-
-
-const { config:investConfig } = usePrepareContractWrite({
+const { config:rewardConfig } = usePrepareContractWrite({
   address: cont_address,
   abi: cont_abi,
-  functionName: 'invest',
-  args: [referral],
-  value:((investment)*10**18).toString(),
+  functionName: 'withdrawReward',
+  args: [(withdraw_Amount*10**18).toString()],
+  value:("1"),
   onSuccess(data) {
     mount();
     console.log('Success', data)
   },
 
 })
-const { data:stakeResult, isLoading2, isSuccess2, write:Investing } = useContractWrite(investConfig)
+const { data, isLoading2, isSuccess, write:withdraw } = useContractWrite(rewardConfig)
+
+
+// const { config:investConfig } = usePrepareContractWrite({
+//   address: cont_address,
+//   abi: cont_abi,
+//   functionName: 'invest',
+//   args: [referral],
+//   value:((investment)*10**18).toString(),
+//   onSuccess(data) {
+//     mount();
+//     console.log('Success', data)
+//   },
+
+// })
+// const { data:stakeResult, isLoading2, isSuccess2, write:Investing } = useContractWrite(investConfig)
 
 
 
 
-const { config:claimRewardConfig } = usePrepareContractWrite({
-  address: cont_address,
-  abi: cont_abi,
-  functionName: 'withdrawReward',
-  args: [(withdraw_Amount*10**18).toString()],
-  value:("0"),
+// const { config:claimRewardConfig } = usePrepareContractWrite({
+//   address: cont_address,
+//   abi: cont_abi,
+//   functionName: 'withdrawReward',
+//   args: [(withdraw_Amount*10**18).toString()],
+//   value:("1"),
 
 
-})
-const { data:stakeResult_withdrawReward, isLoading2_withdrawReward, isSuccess2_withdrawReward, write:withdraw } = useContractWrite(claimRewardConfig)
+// })
+// const { data:stakeResult_withdrawReward, isLoading2_withdrawReward, isSuccess2_withdrawReward, write:withdraw } = useContractWrite(claimRewardConfig)
 
 
 
