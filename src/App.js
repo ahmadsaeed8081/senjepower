@@ -30,7 +30,7 @@ function App() {
 
 
   const chains = [SPC]
-const projectId = '9dc66ab4d76b28b1a452d5dc0083e466'
+const projectId = '8b3cd7dcbfb565705532d880d73759f2'
 
 const { publicClient } = configureChains(chains, [w3mProvider({ projectId })])
 const wagmiConfig = createConfig({
