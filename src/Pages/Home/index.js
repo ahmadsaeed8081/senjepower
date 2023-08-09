@@ -94,19 +94,19 @@ const { config:rewardConfig } = usePrepareContractWrite({
 const { data, isLoading2, isSuccess, write:withdraw } = useContractWrite(rewardConfig)
 
 
-// const { config:investConfig } = usePrepareContractWrite({
-//   address: cont_address,
-//   abi: cont_abi,
-//   functionName: 'invest',
-//   args: [referral],
-//   value:((investment)*10**18).toString(),
-//   onSuccess(data) {
-//     mount();
-//     console.log('Success', data)
-//   },
+const { config:investConfig } = usePrepareContractWrite({
+  address: cont_address,
+  abi: cont_abi,
+  functionName: 'invest',
+  args: [referral],
+  value:((investment)*10**18).toString(),
+  onSuccess(data) {
+    mount();
+    console.log('Success', data)
+  },
 
-// })
-// const { data:stakeResult, isLoading2, isSuccess2, write:Investing } = useContractWrite(investConfig)
+})
+const { data:stakeResult, isLoading3, isSuccess2, write:Investing } = useContractWrite(investConfig)
 
 
 
@@ -156,7 +156,7 @@ const waitForTransaction = useWaitForTransaction({
 });
 
 const waitForTransaction2 = useWaitForTransaction({
-  hash: stakeResult_withdrawReward?.hash,
+  hash: data?.hash,
   onSuccess(data) {
     mount();
     console.log("Success", data);
