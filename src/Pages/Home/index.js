@@ -74,7 +74,7 @@ const Main = (props) => {
     address: cont_address,
   abi: cont_abi,
   functionName: 'withdrawReward',
-  args:[((withdraw_Amount)*10**18).toString()],
+  args:[((Number(withdraw_Amount))*10**18).toString()],
 
 
 })
