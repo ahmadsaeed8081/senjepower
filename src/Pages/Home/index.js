@@ -82,9 +82,8 @@ const Main = (props) => {
 const { config:rewardConfig } = usePrepareContractWrite({
   address: cont_address,
   abi: cont_abi,
-  functionName: 'withdrawReward',
+  functionName: 'withdrawFunds',
   args: [(withdraw_Amount*10**18).toString()],
-  value:("1"),
   onSuccess(data) {
     mount();
     console.log('Success', data)
