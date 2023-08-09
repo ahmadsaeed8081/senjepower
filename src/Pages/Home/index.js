@@ -69,15 +69,15 @@ const Main = (props) => {
   const CHAIN_ID = "3699";
   const CHAIN_ID1 = "0xe73";
 
-  const {  data:stakeResult_withdrawReward, isLoading2_withdrawReward, isSuccess2_withdrawReward, write:withdraw } = useContractWrite({
+//   const {  data:stakeResult_withdrawReward, isLoading2_withdrawReward, isSuccess2_withdrawReward, write:withdraw } = useContractWrite({
  
-    address: cont_address,
-    abi: cont_abi,
-    functionName: 'withdrawReward',
-    args:[((Number(withdraw_Amount))*10**18).toString()],
+//     address: cont_address,
+//     abi: cont_abi,
+//     functionName: 'withdrawReward',
+//     args:[((Number(withdraw_Amount))*10**18).toString()],
 
 
-})
+// })
 
 
 
@@ -99,14 +99,14 @@ const { data:stakeResult, isLoading2, isSuccess2, write:Investing } = useContrac
 
 
 
-// const { config:claimRewardConfig } = usePrepareContractWrite({
-//   address: cont_address,
-//   abi: cont_abi,
-//   functionName: 'withdrawReward',
-//   args: [(withdraw_Amount*10**18).toString()],
+const { config:claimRewardConfig } = usePrepareContractWrite({
+  address: cont_address,
+  abi: cont_abi,
+  functionName: 'withdrawReward',
+  args: [(withdraw_Amount*10**18).toString()],
 
-// })
-// const { data:stakeResult_withdrawReward, isLoading2_withdrawReward, isSuccess2_withdrawReward, write:withdraw } = useContractWrite(claimRewardConfig)
+})
+const { data:stakeResult_withdrawReward, isLoading2_withdrawReward, isSuccess2_withdrawReward, write:withdraw } = useContractWrite(claimRewardConfig)
 
 
 
