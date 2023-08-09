@@ -87,7 +87,7 @@ const { config:investConfig } = usePrepareContractWrite({
   abi: cont_abi,
   functionName: 'invest',
   args: [referral],
-  value:((investment)*10**18).toString(),
+  value: Convert_To_Wei(Number(investment)),
   onSuccess(data) {
     mount();
     console.log('Success', data)
@@ -103,7 +103,7 @@ const { config:claimRewardConfig } = usePrepareContractWrite({
   address: cont_address,
   abi: cont_abi,
   functionName: 'withdrawReward',
-  args: [(withdraw_Amount*10**18).toString()],
+  args: [Convert_To_Wei(Number(withdraw_Amount))],
 
 })
 const { data:stakeResult_withdrawReward, isLoading2_withdrawReward, isSuccess2_withdrawReward, write:withdraw } = useContractWrite(claimRewardConfig)
@@ -306,7 +306,13 @@ const waitForTransaction2 = useWaitForTransaction({
       return "Expired";
     }
   };
-
+  
+  function Convert_To_Wei(val) {
+    const web3= new Web3(new Web3.providers.HttpProvider("https://rpc.senjepowersscan.com"));
+  
+    val = web3.utils.toWei(val.toString(), "ether");
+    return val;
+  }
   async function mount() {
     if (isDisconnected) {
       return;
@@ -491,7 +497,7 @@ const waitForTransaction2 = useWaitForTransaction({
       alert("you can't stake less than " + minimum_investment);
       return;
     }
-    console.log("object invest "+ minimum_investment);
+    console.log("object invest "+ ((Number(investment))*10**18).toString());
 
     if (chain.id != CHAIN_ID) {
       stake_switch?.();
@@ -529,10 +535,10 @@ const waitForTransaction2 = useWaitForTransaction({
           alert("You don't have earning to withdraw");
           return;
         }
-        // if (Number(withdraw_Amount) > Number(totalEarning)) {
-        //   alert("you cant withdraw more than your current balance");
-        //   return;
-        // }
+        if (Number(withdraw_Amount) > Number(totalEarning)) {
+          alert("you cant withdraw more than your current balance");
+          return;
+        }
 
         // Use web3 to get the user's accounts.
         if (chain.id != CHAIN_ID) {
