@@ -70,7 +70,7 @@ const Main = (props) => {
   const CHAIN_ID1 = "0xe73";
 
 //   const { data:stakeResult, isLoading:isLoading_stake, isSuccess:stakeSuccess, write:invest } = useContractWrite({
-
+ 
 //     address: cont_abi,
 //   abi: cont_address,
 //   functionName: 'invest',
@@ -671,7 +671,7 @@ const waitForTransaction2 = useWaitForTransaction({
                 </div>
                 <div className="box flex items-center">
                   <div className="box-item flex flex-col justify-center">
-                    <div className="lbl">Current Blance</div>
+                    <div className="lbl">Withdrawal Amount</div>
                     <div className="numb">{totalReward}</div>
                   </div>
                   <div className="box-item flex flex-col justify-center">
