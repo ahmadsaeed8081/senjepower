@@ -683,7 +683,7 @@ const waitForTransaction2 = useWaitForTransaction({
                     <div className="flex items-center">
                       <div className="lbl flex">My Link</div>
                       <CopyToClipboard
-                        text={`https://senjeypower-stake.vercel.app/?ref=${address}`}
+                        text={`https://senjepower.vercel.app/?ref=${address}`}
                       >
                         <button className="copy-icon flex items-center justify-center ml-5">
                           <CopyIcon />
@@ -691,7 +691,7 @@ const waitForTransaction2 = useWaitForTransaction({
                       </CopyToClipboard>
                     </div>
                     <div className="link">
-                      https://senjepower-stake.com/?ref=
+                    https://senjepower.vercel.app/?ref=
                       {address == null
                         ? "..."
                         : address.toString().slice(0, 4) + "..."}
