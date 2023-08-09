@@ -1,6 +1,6 @@
 
 
-export const cont_address="0x21096FE3C6A5f484Ea9AE79cE338C3e7848ff8A0";
+export const cont_address="0x8A36D4f99aa7E6a80c25Aa97291B83000EEdf646";
 
 export const cont_abi=[
 	{
@@ -111,7 +111,7 @@ export const cont_abi=[
 				"type": "bool"
 			}
 		],
-		"stateMutability": "nonpayable",
+		"stateMutability": "payable",
 		"type": "function"
 	},
 	{

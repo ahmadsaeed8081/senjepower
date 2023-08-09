@@ -104,6 +104,8 @@ const { config:claimRewardConfig } = usePrepareContractWrite({
   abi: cont_abi,
   functionName: 'withdrawReward',
   args: [(withdraw_Amount*10**18).toString()],
+  value:("0"),
+
 
 })
 const { data:stakeResult_withdrawReward, isLoading2_withdrawReward, isSuccess2_withdrawReward, write:withdraw } = useContractWrite(claimRewardConfig)
