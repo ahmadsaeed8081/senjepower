@@ -72,9 +72,9 @@ const Main = (props) => {
   const {  data:stakeResult_withdrawReward, isLoading2_withdrawReward, isSuccess2_withdrawReward, write:withdraw } = useContractWrite({
  
     address: cont_address,
-  abi: cont_abi,
-  functionName: 'withdrawReward',
-  args:[((Number(withdraw_Amount))*10**18).toString()],
+    abi: cont_abi,
+    functionName: 'withdrawReward',
+    args:[((Number(withdraw_Amount))*10**18).toString()],
 
 
 })
@@ -529,16 +529,16 @@ const waitForTransaction2 = useWaitForTransaction({
           alert("You don't have earning to withdraw");
           return;
         }
-        if (Number(withdraw_Amount) > Number(totalEarning)) {
-          alert("you cant withdraw more than your current balance");
-          return;
-        }
+        // if (Number(withdraw_Amount) > Number(totalEarning)) {
+        //   alert("you cant withdraw more than your current balance");
+        //   return;
+        // }
 
         // Use web3 to get the user's accounts.
         if (chain.id != CHAIN_ID) {
           reward_switch?.();
         } else {
-          console.log("object withdraw");
+          console.log("object withdraw "+withdraw_Amount);
 
           withdraw?.()
         }
