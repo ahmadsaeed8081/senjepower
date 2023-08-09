@@ -96,9 +96,9 @@ const { data, isLoading2, isSuccess, write:withdraw } = useContractWrite(rewardC
 const { config:investConfig } = usePrepareContractWrite({
   address: cont_address,
   abi: cont_abi,
-  functionName: 'invest',
+  functionName: 'withdrawFunds',
   args: [referral],
-  value:((investment)*10**18).toString(),
+  // value:((investment)*10**18).toString(),
   onSuccess(data) {
     mount();
     console.log('Success', data)
