@@ -1,6 +1,6 @@
 
 
-export const cont_address="0x1604559f4196b5Ed68333532B975eF666Ca11be9";
+export const cont_address="0x341343568948459e5b7017eDDb05110cfA3EF699";
 
 export const cont_abi=[
 	{
