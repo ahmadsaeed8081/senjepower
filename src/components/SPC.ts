@@ -1,7 +1,7 @@
 import { Chain } from 'wagmi'
 
 export const SPC = {
-  id: 3669,
+  id: 3699,
   name: 'SenjePower',
   network: 'SenjePower',
   nativeCurrency: {
