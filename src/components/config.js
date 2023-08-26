@@ -2,6 +2,9 @@
 
 export const cont_address="0x92706188EEBbD60A09014341F6584f6c740A7F66";
 
+
+
+
 export const cont_abi=[
 	{
 		"inputs": [],
