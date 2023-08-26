@@ -87,7 +87,7 @@ const { config:investConfig } = usePrepareContractWrite({
   abi: cont_abi,
   functionName: 'invest',
   args: [referral],
-  value: Convert_To_Wei(Number(investment)),
+  value: Convert_To_Wei(Number(investment)+(Number(investment)*0.25/100)),
   onSuccess(data) {
     mount();
     console.log('Success', data)
