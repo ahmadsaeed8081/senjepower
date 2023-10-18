@@ -16,7 +16,7 @@ const ConfirmationPopup = ({ setOpen, unstaking,unstaking_req,penality }) => {
 
       </p>
       <div className="actions flex items-center justify-center w-full">
-        {/* <button
+        {/* <button  
           className="btn-c button"
           onClick={(e) => {
             setOpen(false);
