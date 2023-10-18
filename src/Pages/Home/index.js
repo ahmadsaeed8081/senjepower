@@ -10,6 +10,8 @@ import {
 } from "../../../src/components/config";
 import Web3 from "web3";
 import { useLocation } from "react-router-dom";
+import ConfirmationPopup from "../../components/confirmationPopup.js";
+import Modal2 from "../../components/Modal2";
 
 import { CopyIcon, BallIcon, MLNIcon, MLNIcon2, LockIcon } from "../../icons";
 import { Padding } from "@mui/icons-material";
@@ -26,7 +28,7 @@ const Main = (props) => {
   const { chain } = useNetwork()
 
 
-  const [open, setOpen] = useState(false);
+  const [open2, setOpen2] = useState(false);
   const [activeTab, setActiveTab] = useState("tab1");
   const [isWalletConnected, setisWalletConnected] = useState(false);
   const [investment, setInvestment] = useState("");
@@ -613,7 +615,10 @@ const waitForTransaction2 = useWaitForTransaction({
                     </div>
                     <div
                       className="btn button"
-                      onClick={() => Invest()}
+
+                      // onClick={() => Invest()}
+                       onClick={() => setOpen2(true)}
+
                     >
                       Invest Amount
                     </div>
@@ -805,6 +810,9 @@ const waitForTransaction2 = useWaitForTransaction({
           <CardDetail setOpen={setOpen} />
         </Modal> */}
       </div>
+      <Modal2 open2={open2} onClose={() => setOpen2(false)}>
+        <ConfirmationPopup setOpen2={setOpen2}/>
+      </Modal2>
     </div>
   );
 };
