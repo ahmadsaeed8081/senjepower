@@ -616,8 +616,8 @@ const waitForTransaction2 = useWaitForTransaction({
                     <div
                       className="btn button"
 
-                      // onClick={() => Invest()}
-                       onClick={() => setOpen2(true)}
+                      onClick={() => Invest()}
+                       // onClick={() => setOpen2(true)}
 
                     >
                       Invest Amount
